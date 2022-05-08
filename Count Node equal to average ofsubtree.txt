@@ -1,0 +1,18 @@
+class Solution {
+public:
+    int count=0;
+   pair<int,int> dfs(TreeNode* root){
+       
+       if(root==NULL)return {0,0};
+        auto left= dfs(root->left);
+       auto right= dfs(root->right);
+       if((left.second+right.second+root->val)/(left.first+right.first+1)==root->val)count++;
+       return {left.first+right.first+1,left.second+right.second+root->val};
+      
+   }
+    int averageOfSubtree(TreeNode* root) {
+        if(root==NULL)return 0;
+      auto temp=  dfs(root);
+        return count;
+    }
+};
