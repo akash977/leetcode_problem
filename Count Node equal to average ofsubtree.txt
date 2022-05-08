@@ -12,7 +12,7 @@ public:
    }
     int averageOfSubtree(TreeNode* root) {
         if(root==NULL)return 0;
-      auto temp=  dfs(root);
+      auto temp1=  dfs(root);
         return count;
     }
 };
